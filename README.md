@@ -13,6 +13,13 @@ Développer un site 100% mobile qui répertorie les menus de restaurants gastron
 - Validation W3C en HTML et CSS sans erreur
 - Compatibilité avec les dernières versions de Chrome et Firefox
 
+### Charte graphique
+- Polices : Logo et titres: Shrikhand, Texte: Roboto
+- Primaire: #9356DC
+- Secondaire: #FF79DA
+- Tertiaire: #99E2D0
+- Bibliothèque Font Awesome pour les icones
+
 ### Technlogies
 HTML, CSS, SASS, Font Awesome, Github
 

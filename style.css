@@ -1,1 +1,210 @@
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+/*--------------------------------------------------------------
+# Reset CSS
+--------------------------------------------------------------*/
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand");
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+.operation_title, .discover-menu p:nth-child(1) {
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+
+.operation_box, .discover-menu {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.operation_box ul {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Shrikhand", sans-serif;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+#header img {
+  width: 10rem;
+}
+
+/*--------------------------------------------------------------
+# Banner localisation
+--------------------------------------------------------------*/
+.localisation {
+  background-color: #EAEAEA;
+  color: #353535;
+  padding: 0.5rem;
+  margin-top: 2px;
+}
+.localisation :nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 1.5rem 0 0.5rem;
+}
+
+/*--------------------------------------------------------------
+# Box call to action with button explorer
+--------------------------------------------------------------*/
+.discover-menu {
+  background-color: #F6F6F6;
+  text-align: -webkit-center;
+  padding-bottom: 3rem;
+}
+.discover-menu p:nth-child(1) {
+  padding: 1.5rem 2rem 0.5em 2rem;
+}
+.discover-menu p:nth-child(2) {
+  padding-bottom: 1.5rem;
+  font-weight: lighter;
+}
+.discover-menu button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  border-radius: 15px;
+  color: white;
+  border: none;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+  background: #FF79DA;
+  background: -moz-linear-gradient(170deg, #ff79da 0%, #ff79da 0%, #9356dc 100%);
+  background: -webkit-linear-gradient(170deg, #ff79da 0%, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(170deg, #ff79da 0%, #ff79da 0%, #9356dc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff79da",endColorstr="#9356dc",GradientType=1);
+}
+
+/*--------------------------------------------------------------
+# Fonctionnement
+--------------------------------------------------------------*/
+.operation_title {
+  padding: 1.5rem 1rem;
+}
+
+.operation_box ul {
+  margin: 0 auto;
+}
+.operation_box li {
+  counter-increment: li;
+  background-color: #F6F6F6;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+}
+.operation_box li::before {
+  content: counter(li);
+  background-color: #9356DC;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.4rem;
+  margin-right: 0.5rem;
+  margin-left: -2.5rem;
+  padding-left: 0.45rem;
+  font-size: 0.8rem;
+  z-index: 20;
+}
+.operation_box .fa-mobile-alt {
+  color: #7E7E7E;
+  display: inline-block;
+  height: 1.3em;
+  vertical-align: middle;
+  width: 1em;
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
+}
+.operation_box .fa-list {
+  color: #7E7E7E;
+  display: inline-block;
+  height: 1.3em;
+  vertical-align: middle;
+  width: 1em;
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
+}
+.operation_box .fa-store {
+  color: #7E7E7E;
+  display: inline-block;
+  height: 1.3em;
+  vertical-align: middle;
+  width: 1em;
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
+}
+.operation_box li:last-child {
+  background: rgba(147, 86, 220, 0.1);
+}
+.operation_box li:last-child .fa-store {
+  color: #9356DC;
+}
+
+/*--------------------------------------------------------------
+# Restaurants
+--------------------------------------------------------------*/
+
+/*# sourceMappingURL=style.css.map */

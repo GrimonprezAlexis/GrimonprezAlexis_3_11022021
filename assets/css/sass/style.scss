@@ -1,3 +1,197 @@
 // Les commentaires
 // "/* */" Présent à la sortie du CSS, "//" Pas compile (pas présent dans le CSS de sortie)
+
+/*--------------------------------------------------------------
+# Reset CSS
+--------------------------------------------------------------*/
 @import "./lib/reset.scss";
+
+
+//--------------------------------------------------------------
+// # Font: Roboto for text, Shrikhand for title
+//--------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand');
+
+
+//--------------------------------------------------------------
+// # Variables
+//--------------------------------------------------------------
+$text-font-family: 'Roboto', sans-serif;
+$title-font-family: 'Shrikhand', sans-serif;
+
+$primaire: #9356DC;
+$secondaire: #FF79DA;
+$tertiaire: #99E2D0;
+$grey: #EAEAEA;
+
+// Color variation according to model
+$grey-light: #F6F6F6;
+$black-light: #353535;
+$grey-dark: #7E7E7E;
+
+$shadow-body: 2px 4px 5px rgb(0 0 0 / 20%);
+
+//--------------------------------------------------------------
+// # Legacy property
+//--------------------------------------------------------------
+%bold_text {
+    font-weight: 900;
+    font-size: 1.4rem;
+}
+
+%flex-column-wrap {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+%list {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+    font-family: $text-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font-family;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: 0px 1px 5px rgb(0 0 0 / 20%);
+
+    img {
+        width: 10rem;
+    }
+}
+
+/*--------------------------------------------------------------
+# Banner localisation
+--------------------------------------------------------------*/
+.localisation {
+    background-color: $grey;
+    color: $black-light;
+    padding: 0.5rem;
+    margin-top: 2px;
+
+    :nth-child(1){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 1.5rem 0 0.5rem;
+    }
+}
+
+/*--------------------------------------------------------------
+# Box call to action with button explorer
+--------------------------------------------------------------*/
+.discover-menu {
+    background-color: $grey-light;
+    @extend %flex-column-wrap;
+    text-align: -webkit-center;
+    padding-bottom: 3rem;
+
+    p:nth-child(1){
+        @extend %bold_text;
+        padding: 1.5rem 2rem 0.5em 2rem;
+    }
+
+    p:nth-child(2){
+        padding-bottom: 1.5rem;
+        font-weight: lighter;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+        padding: 0.9rem 1.5rem;
+        border-radius: 15px;
+        color: white;
+        border: none;
+        box-shadow: $shadow-body;
+        background: $secondaire;
+        background: -moz-linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+        background: -webkit-linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+        background: linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff79da",endColorstr="#9356dc",GradientType=1);
+    }
+}
+
+/*--------------------------------------------------------------
+# Fonctionnement
+--------------------------------------------------------------*/
+.operation_title {
+    @extend %bold_text;
+    padding: 1.5rem 1rem;
+}
+
+.operation_box {
+    @extend %flex-column-wrap;
+
+    ul {
+        @extend %list;
+        margin: 0 auto;
+    }
+
+    li {
+        counter-increment: li;
+        background-color: $grey-light;
+        box-shadow: $shadow-body;
+        display: flex;
+        align-items: center;
+        border-radius: 15px;
+        margin-bottom: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    li::before {
+        content: counter(li);
+        background-color: $primaire;
+        color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        height: 1.5rem;
+        width: 1.4rem;
+        margin-right: 0.5rem;
+        margin-left: -2.5rem;
+        padding-left: 0.45rem;
+        font-size: 0.8rem;
+        z-index: 20;
+    }
+
+    $operation_icons: mobile-alt, list, store;
+    @each $operation_icon in $operation_icons {
+        .fa-#{$operation_icon}{
+            color: $grey-dark;
+            display: inline-block;
+            height: 1.3em;
+            vertical-align: middle;
+            width: 1em;
+            margin-right: 1.5rem;
+            margin-left: 0.5rem;
+        }
+    }
+
+    li:last-child {
+        background: rgba(147, 86, 220, 10%);
+        .fa-store {
+            color:$primaire;
+        }
+
+    }
+}
+
+/*--------------------------------------------------------------
+# Restaurants
+--------------------------------------------------------------*/
+
+
