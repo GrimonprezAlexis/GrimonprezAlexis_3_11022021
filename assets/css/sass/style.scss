@@ -29,6 +29,8 @@ $grey: #EAEAEA;
 $grey-light: #F6F6F6;
 $black-light: #353535;
 $grey-dark: #7E7E7E;
+$green-light: #99E2D0;
+$green-dark: #0B8D6D;
 
 $shadow-body: 2px 4px 5px rgb(0 0 0 / 20%);
 
@@ -58,15 +60,15 @@ body {
     font-family: $text-font-family;
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
   font-family: $title-font-family;
-}
+} */
 
 #header {
     display: flex;
     justify-content: center;
     padding: 1rem;
-    box-shadow: 0px 1px 5px rgb(0 0 0 / 20%);
+    box-shadow: $shadow-body;
 
     img {
         width: 10rem;
@@ -93,13 +95,13 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Box call to action with button explorer
 --------------------------------------------------------------*/
-.discover-menu {
+.discover__menu {
     background-color: $grey-light;
     @extend %flex-column-wrap;
     text-align: -webkit-center;
-    padding-bottom: 3rem;
+    padding: 1rem 2rem 2.5rem 2rem;
 
-    p:nth-child(1){
+    h2:nth-child(1){
         @extend %bold_text;
         padding: 1.5rem 2rem 0.5em 2rem;
     }
@@ -111,30 +113,37 @@ h1, h2, h3, h4, h5, h6 {
 
     button {
         display: block;
+        font-weight: bold;
         margin: 0 auto;
         padding: 0.9rem 1.5rem;
-        border-radius: 15px;
+        border-radius: 100px;
         color: white;
         border: none;
         box-shadow: $shadow-body;
-        background: $secondaire;
-        background: -moz-linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
-        background: -webkit-linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
-        background: linear-gradient(170deg, rgba(255,121,218,1) 0%, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+        background:  linear-gradient(0deg ,rgba(147,86,220,.9),rgba(255,121,218,.9));
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff79da",endColorstr="#9356dc",GradientType=1);
     }
 }
 
 /*--------------------------------------------------------------
-# Fonctionnement
+# New div
 --------------------------------------------------------------*/
-.operation_title {
-    @extend %bold_text;
-    padding: 1.5rem 1rem;
+.main__box {
+    @extend %flex-column-wrap;
+    padding: 1.5rem 1rem 3.5rem;
 }
 
-.operation_box {
-    @extend %flex-column-wrap;
+
+/*--------------------------------------------------------------
+# Fonctionnement
+--------------------------------------------------------------*/
+.operation__box {
+    background-color:white;
+
+    .operation__title {
+        @extend %bold_text;
+        padding: 1.5rem 1rem 1.5rem;
+    }
 
     ul {
         @extend %list;
@@ -149,7 +158,8 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center;
         border-radius: 15px;
         margin-bottom: 1rem;
-        padding: 1rem 2rem;
+        padding: 1rem 3.5rem;
+        font-weight: bold;
     }
 
     li::before {
@@ -193,5 +203,67 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Restaurants
 --------------------------------------------------------------*/
+.restaurant__box {
+    background-color: $grey-light;
+
+    .restaurant__title {
+        @extend %bold_text;
+        padding: 1.5rem 0 1rem;
+    }
+    .restaurant__item {
+        position: relative;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: $shadow-body;
+        border-radius: 15px;
+    }
+    .restaurant__badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: $green-dark;
+        background-color: $green-light;
+        box-shadow: $shadow-body;
+        padding: 0.35rem 0.8rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+        border-radius: 2px;
+    }
+    .restaurant__details {
+        background-color: white;
+        margin-top: -4px;
+        padding: 1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 0 0 15px 15px;
+    }
+    .restaurant__details__text {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        flex: 1;
+    }
+    .restaurant__details__text h3 {
+        font-weight: bold;
+        font-size: 1.12rem;
+        margin: 0 0 0.3rem;
+    }
+    .restaurant__details__img {
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
 
 
+}
+
+
+
+.container {
+    width: auto;
+    padding-left: 4.5vw;
+    margin: 2vw;
+}

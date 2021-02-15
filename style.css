@@ -48,17 +48,17 @@ td, th {
   padding: 0;
 }
 
-.operation_title, .discover-menu p:nth-child(1) {
+.restaurant__box .restaurant__title, .operation__box .operation__title, .discover__menu h2:nth-child(1) {
   font-weight: 900;
   font-size: 1.4rem;
 }
 
-.operation_box, .discover-menu {
+.main__box, .discover__menu {
   display: flex;
   flex-flow: column wrap;
 }
 
-.operation_box ul {
+.operation__box ul {
   padding: 0;
   list-style: none;
 }
@@ -74,15 +74,14 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Shrikhand", sans-serif;
-}
-
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: $title-font-family;
+} */
 #header {
   display: flex;
   justify-content: center;
   padding: 1rem;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 }
 #header img {
   width: 10rem;
@@ -107,44 +106,51 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Box call to action with button explorer
 --------------------------------------------------------------*/
-.discover-menu {
+.discover__menu {
   background-color: #F6F6F6;
   text-align: -webkit-center;
-  padding-bottom: 3rem;
+  padding: 1rem 2rem 2.5rem 2rem;
 }
-.discover-menu p:nth-child(1) {
+.discover__menu h2:nth-child(1) {
   padding: 1.5rem 2rem 0.5em 2rem;
 }
-.discover-menu p:nth-child(2) {
+.discover__menu p:nth-child(2) {
   padding-bottom: 1.5rem;
   font-weight: lighter;
 }
-.discover-menu button {
+.discover__menu button {
   display: block;
+  font-weight: bold;
   margin: 0 auto;
   padding: 0.9rem 1.5rem;
-  border-radius: 15px;
+  border-radius: 100px;
   color: white;
   border: none;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-  background: #FF79DA;
-  background: -moz-linear-gradient(170deg, #ff79da 0%, #ff79da 0%, #9356dc 100%);
-  background: -webkit-linear-gradient(170deg, #ff79da 0%, #ff79da 0%, #9356dc 100%);
-  background: linear-gradient(170deg, #ff79da 0%, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff79da",endColorstr="#9356dc",GradientType=1);
+}
+
+/*--------------------------------------------------------------
+# New div
+--------------------------------------------------------------*/
+.main__box {
+  padding: 1.5rem 1rem 3.5rem;
 }
 
 /*--------------------------------------------------------------
 # Fonctionnement
 --------------------------------------------------------------*/
-.operation_title {
-  padding: 1.5rem 1rem;
+.operation__box {
+  background-color: white;
 }
-
-.operation_box ul {
+.operation__box .operation__title {
+  padding: 1.5rem 1rem 1.5rem;
+}
+.operation__box ul {
   margin: 0 auto;
 }
-.operation_box li {
+.operation__box li {
   counter-increment: li;
   background-color: #F6F6F6;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
@@ -152,9 +158,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   border-radius: 15px;
   margin-bottom: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 3.5rem;
+  font-weight: bold;
 }
-.operation_box li::before {
+.operation__box li::before {
   content: counter(li);
   background-color: #9356DC;
   color: white;
@@ -169,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8rem;
   z-index: 20;
 }
-.operation_box .fa-mobile-alt {
+.operation__box .fa-mobile-alt {
   color: #7E7E7E;
   display: inline-block;
   height: 1.3em;
@@ -178,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 1.5rem;
   margin-left: 0.5rem;
 }
-.operation_box .fa-list {
+.operation__box .fa-list {
   color: #7E7E7E;
   display: inline-block;
   height: 1.3em;
@@ -187,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 1.5rem;
   margin-left: 0.5rem;
 }
-.operation_box .fa-store {
+.operation__box .fa-store {
   color: #7E7E7E;
   display: inline-block;
   height: 1.3em;
@@ -196,15 +203,73 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 1.5rem;
   margin-left: 0.5rem;
 }
-.operation_box li:last-child {
+.operation__box li:last-child {
   background: rgba(147, 86, 220, 0.1);
 }
-.operation_box li:last-child .fa-store {
+.operation__box li:last-child .fa-store {
   color: #9356DC;
 }
 
 /*--------------------------------------------------------------
 # Restaurants
 --------------------------------------------------------------*/
+.restaurant__box {
+  background-color: #F6F6F6;
+}
+.restaurant__box .restaurant__title {
+  padding: 1.5rem 0 1rem;
+}
+.restaurant__box .restaurant__item {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+.restaurant__box .restaurant__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #0B8D6D;
+  background-color: #99E2D0;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+  padding: 0.35rem 0.8rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 2px;
+}
+.restaurant__box .restaurant__details {
+  background-color: white;
+  margin-top: -4px;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 15px 15px;
+}
+.restaurant__box .restaurant__details__text {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  flex: 1;
+}
+.restaurant__box .restaurant__details__text h3 {
+  font-weight: bold;
+  font-size: 1.12rem;
+  margin: 0 0 0.3rem;
+}
+.restaurant__box .restaurant__details__img {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container {
+  width: auto;
+  padding-left: 4.5vw;
+  margin: 2vw;
+}
 
 /*# sourceMappingURL=style.css.map */
