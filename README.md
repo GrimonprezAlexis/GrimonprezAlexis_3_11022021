@@ -4,6 +4,7 @@ Projet 3 - Dynamisez une page web avec des animations CSS
 
 ### Objectif
 Développer un site 100% mobile qui répertorie les menus de restaurants gastronomiques, permettre la réservation en ligne et la composition de menus
+[Brief](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DW_P3/Brief%20cre%CC%81atif%20-%20Ohmyfood!.pdf)
 
 ### Contraintes techniques
 - CSS, sans JavaScript
