@@ -34,6 +34,38 @@ $green-dark: #0B8D6D;
 
 $shadow-body: 2px 4px 5px rgb(0 0 0 / 20%);
 
+// For like button
+@mixin gradient-animation( $start, $end, $transTime, $content ) {
+    background-size: 100%;
+    font-weight: 300!important;
+    background-image: linear-gradient($black-light, $black-light);
+    position: relative;
+    z-index: 100;
+  
+  &:after {
+    font-weight: 900!important;
+    background-image: linear-gradient($end, $start);
+    content: $content;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -100;
+    transition: opacity $transTime;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+
 //--------------------------------------------------------------
 // # Legacy property
 //--------------------------------------------------------------
@@ -256,14 +288,46 @@ body {
         align-items: center;
         cursor: pointer;
     }
-
-
+    .restaurant__details__img i {
+        font-size: 1.8rem;
+    }
+    .restaurant__img__gradient {
+        @include gradient-animation(#9356dc, #ff79da, 1s, "\f004");
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
+.footer {
+    background-color: $black-light;
+    color: white;
+    padding-bottom: 1rem;
 
+    .footer__content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        margin-left: 0.5rem;
+    }
 
-.container {
-    width: auto;
-    padding-left: 4.5vw;
-    margin: 2vw;
+    .footer__logo__text {
+        font-family: $title-font-family;
+        font-size: 1.3rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .footer__list__link li {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer__list__link li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer__icon {
+        width: 1.2rem;
+        margin-right: 0.3rem;
+    }
 }

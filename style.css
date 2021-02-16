@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*--------------------------------------------------------------
 # Reset CSS
 --------------------------------------------------------------*/
@@ -265,11 +266,65 @@ body {
   align-items: center;
   cursor: pointer;
 }
+.restaurant__box .restaurant__details__img i {
+  font-size: 1.8rem;
+}
+.restaurant__box .restaurant__img__gradient {
+  background-size: 100%;
+  font-weight: 300 !important;
+  background-image: linear-gradient(#353535, #353535);
+  position: relative;
+  z-index: 100;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.restaurant__box .restaurant__img__gradient:after {
+  font-weight: 900 !important;
+  background-image: linear-gradient(#ff79da, #9356dc);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  transition: opacity 1s;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.restaurant__box .restaurant__img__gradient:hover:after {
+  opacity: 1;
+}
 
-.container {
-  width: auto;
-  padding-left: 4.5vw;
-  margin: 2vw;
+.footer {
+  background-color: #353535;
+  color: white;
+  padding-bottom: 1rem;
+}
+.footer .footer__content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-left: 0.5rem;
+}
+.footer .footer__logo__text {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.footer .footer__list__link li {
+  margin-bottom: 0.5rem;
+}
+.footer .footer__list__link li a {
+  text-decoration: none;
+  color: white;
+}
+.footer .footer__icon {
+  width: 1.2rem;
+  margin-right: 0.3rem;
 }
 
 /*# sourceMappingURL=style.css.map */
