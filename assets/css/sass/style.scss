@@ -34,6 +34,9 @@ $green-dark: #0B8D6D;
 
 $shadow-body: 2px 4px 5px rgb(0 0 0 / 20%);
 
+@mixin animation-check () {
+}
+
 // For like button
 @mixin gradient-animation( $start, $end, $transTime, $content ) {
     background-size: 100%;
@@ -90,6 +93,11 @@ body {
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;
     font-family: $text-font-family;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* h1, h2, h3, h4, h5, h6 {
@@ -164,6 +172,27 @@ body {
     @extend %flex-column-wrap;
     padding: 1.5rem 1rem 3.5rem;
 }
+
+
+/*--------------------------------------------------------------
+# Like box with gradien animation ❤
+--------------------------------------------------------------*/
+.like__box {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.like__box i {
+    font-size: 1.8rem;
+}
+.like__gradient {
+    @include gradient-animation(#9356dc, #ff79da, 1s, "\f004");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -249,6 +278,14 @@ body {
         box-shadow: $shadow-body;
         border-radius: 15px;
     }
+    .restaurant__item img {
+        height: 12rem;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        object-fit: cover;
+    }
+
+
     .restaurant__badge {
         position: absolute;
         top: 1rem;
@@ -280,21 +317,6 @@ body {
         font-weight: bold;
         font-size: 1.12rem;
         margin: 0 0 0.3rem;
-    }
-    .restaurant__details__img {
-        height: 2rem;
-        width: 2rem;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-    }
-    .restaurant__details__img i {
-        font-size: 1.8rem;
-    }
-    .restaurant__img__gradient {
-        @include gradient-animation(#9356dc, #ff79da, 1s, "\f004");
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
 }
 
@@ -330,4 +352,142 @@ body {
         width: 1.2rem;
         margin-right: 0.3rem;
     }
+}
+
+
+/*--------------------------------------------------------------
+# Page du menu du restaurant
+--------------------------------------------------------------*/
+.restaurant__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    padding-left: 0rem;
+    box-shadow: 2px 4px 5px rgb(0 0 0 / 20%);
+
+    a {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-family: 'Shrikhand', sans-serif;
+    }
+}
+
+
+.menu {
+    background-color: $grey-light;
+    margin-top: -3.5rem;
+    position: relative;
+    z-index: 10;
+    border-radius: 2rem 2rem 0 0;
+    padding: 2rem 1rem;
+
+    .menu__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-bottom: 1.5rem;
+    
+        h2 {
+            font-family: $title-font-family;
+            font-size: 2rem;
+    
+        }
+    }
+
+    .submenu__title {
+        h3 {
+            font-family: $text-font-family;
+            text-transform: uppercase;
+            padding-bottom: 0.35rem;
+            position: relative;
+        }
+        h3::after {
+            content: "";
+            height: 2px;
+            width: 15%;
+            background-color: $tertiaire;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+    
+        }
+    }
+
+    .menu__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        background-color: $grey-light;
+        border-radius: 15px;
+        margin: 1rem 0;
+        padding: 1rem;
+        box-shadow: $shadow-body;
+       /*  @mixin animation-check(  ) {}; */
+
+
+        h4 {
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding-bottom: 0.25rem;
+        }
+
+        .menu__item__text {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu__item__price {
+            font-weight: bold;
+        }
+
+        .menu__item__check {
+            position: absolute;
+            background-color: $tertiaire;
+            right: 0;
+            top: 0;
+            width: 4rem;
+            height: -webkit-fill-available;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 15px 15px 0;
+            margin-right: -5rem;
+        }
+
+        .menu__item__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 100px;
+            background-color:white;
+            transform: rotate(0);
+            transition-duration: .5s;
+        }
+
+        .menu__item__icon i {
+            color: $tertiaire;
+        }
+
+
+        &hover {
+            .menu__item__check {
+                margin-right: 0rem;
+            }
+            .menu__item__icon {
+                transform: rotate(180deg);
+            }
+        }
+        
+
+
+    }
+
+    
 }
