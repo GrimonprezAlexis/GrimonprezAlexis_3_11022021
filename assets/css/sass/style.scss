@@ -7,6 +7,11 @@
 @import "./lib/reset.scss";
 
 
+/*--------------------------------------------------------------
+# Animation key frames cross plateform
+--------------------------------------------------------------*/
+
+
 //--------------------------------------------------------------
 // # Font: Roboto for text, Shrikhand for title
 //--------------------------------------------------------------
@@ -34,8 +39,6 @@ $green-dark: #0B8D6D;
 
 $shadow-body: 2px 4px 5px rgb(0 0 0 / 20%);
 
-@mixin animation-check () {
-}
 
 // For like button
 @mixin gradient-animation( $start, $end, $transTime, $content ) {
@@ -187,7 +190,7 @@ a {
     i {
         font-size: 1.8rem;
     }
-
+    
     &__gradient {
         @include gradient-animation(#9356dc, #ff79da, 1s, "\f004");
         -webkit-background-clip: text;
@@ -440,19 +443,49 @@ a {
 }
 
 
+@keyframes fade-item-menu {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@-moz-keyframes fade-item-menu { /* sur Firefox */
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@-webkit-keyframes fade-item-menu { /* sur Safari et Chrome */
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
 
 .item__menu {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    overflow: hidden;
     position: relative;
     background-color: $grey-light;
     border-radius: 15px;
     margin: 1rem 0;
     padding: 1rem;
     box-shadow: $shadow-body;
-    /*  @mixin animation-check(  ) {}; */
-
+    cursor: pointer;
+    max-width: 100%;
+    animation: fade-item-menu 1000ms;    
+    -moz-animation: fade-item-menu .6s; // Firefox
+    -webkit-animation: fade-item-menu .6s; // Safari et Chrome
+    -o-animation: fade-item-menu .6s; // Opera
+    animation-fill-mode: both;
 
     h4 {
         font-weight: bold;
@@ -466,21 +499,22 @@ a {
     }
 
     &__price {
+        display: flex;
+        align-items: flex-end;
         font-weight: bold;
+        padding-left: 1rem;
     }
 
+
     &__check {
-        position: absolute;
-        background-color: $tertiaire;
-        right: 0;
-        top: 0;
-        width: 4rem;
-        height: -webkit-fill-available;
         display: flex;
+        background-color: $tertiaire;
         justify-content: center;
+        width: 4rem;
         align-items: center;
         border-radius: 0 15px 15px 0;
-        margin-right: -5rem;
+        margin: -1rem -5rem -1rem 1rem;
+        transition-duration: 0.5s;
     }
 
     &__icon {
@@ -491,12 +525,27 @@ a {
         width: 1.5rem;
         border-radius: 100px;
         background-color:white;
-        transform: rotate(0);
-        transition-duration: .5s;
+        transform: rotate(90deg);
+        transition-duration: 0.5s;
 
         i {
             color: $tertiaire;
         }
     }
-    
+
+    &:hover &__check {
+        margin-right: -1rem;
+    }
+
+    &:hover &__icon {
+        transform: rotate(360deg);
+    }
+}
+
+
+//Replace the method delay normaly with Jquery for delay between div
+@for $i from 0 to 9 {
+  .fade-in-delay-#{$i} {
+    animation-delay:  #{$i/10}s;
+  }
 }
