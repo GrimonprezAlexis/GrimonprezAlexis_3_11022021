@@ -96,7 +96,7 @@
             margin-bottom: 1rem;
             padding: 1rem 3.5rem;
             font-weight: bold;
-            
+
             &:hover {
                 transform: scale(1.05);
             }
@@ -145,7 +145,7 @@
 /*--------------------------------------------------------------
 # Restaurants
 --------------------------------------------------------------*/
-.restaurant {
+.card {
     background-color: $color__grey-light;
 
     &__title {
