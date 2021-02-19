@@ -1,0 +1,225 @@
+#header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    box-shadow: $shadow-body;
+
+    img {
+        width: 10rem;
+    }
+}
+
+/*--------------------------------------------------------------
+# Banner localisation
+--------------------------------------------------------------*/
+.localisation {
+    background-color: $color__grey;
+    color: $color__black-light;
+    padding: 0.5rem;
+    margin-top: 2px;
+
+    :nth-child(1){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 1.5rem 0 0.5rem;
+    }
+}
+
+/*--------------------------------------------------------------
+# Box call to action with button explorer
+--------------------------------------------------------------*/
+.discover__menu {
+    background-color: $color__grey-light;
+    @extend %flex-column-wrap;
+    text-align: -webkit-center;
+    padding: 1rem 2rem 2.5rem 2rem;
+
+    h2:nth-child(1){
+        @extend %bold_text;
+        padding: 1.5rem 2rem 0.5em 2rem;
+    }
+
+    p:nth-child(2){
+        padding-bottom: 1.5rem;
+        font-weight: lighter;
+    }
+
+    &__btn {
+        display: block;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 0.9rem 1.5rem;
+        border-radius: 100px;
+        color: white;
+        border: none;
+        box-shadow: $shadow-body;
+        background:  linear-gradient(0deg ,rgba(147,86,220,.9),rgba(255,121,218,.9));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff79da",endColorstr="#9356dc",GradientType=1);
+        
+        &:hover {
+            @extend %hover__btn;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# New div
+--------------------------------------------------------------*/
+.main__box {
+    @extend %flex-column-wrap;
+    padding: 1.5rem 1rem 3.5rem;
+}
+
+/*--------------------------------------------------------------
+# Fonctionnement
+--------------------------------------------------------------*/
+.operation__box {
+    background-color:white;
+
+    &__title {
+        @extend %bold_text;
+        padding: 1.5rem 1rem 1.5rem;
+    }
+
+    &__list {
+        @extend %list;
+        margin: 0 auto;
+
+        li {
+            counter-increment: li;
+            background-color: $color__grey-light;
+            box-shadow: $shadow-body;
+            display: flex;
+            align-items: center;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            padding: 1rem 3.5rem;
+            font-weight: bold;
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    
+        li::before {
+            content: counter(li);
+            background-color: $color__primaire;
+            color: white;
+            display: flex;
+            align-items: center;
+            border-radius: 50%;
+            height: 1.5rem;
+            width: 1.4rem;
+            margin-right: 0.5rem;
+            margin-left: -2.5rem;
+            padding-left: 0.45rem;
+            font-size: 0.8rem;
+            z-index: 20;
+        }
+
+    }
+
+
+    $operation_icons: mobile-alt, list, store;
+    @each $operation_icon in $operation_icons {
+        .fa-#{$operation_icon}{
+            color: $color__grey-dark;
+            display: inline-block;
+            height: 1.3em;
+            vertical-align: middle;
+            width: 1em;
+            margin-right: 1.5rem;
+            margin-left: 0.5rem;
+        }
+    }
+
+    li:last-child {
+        background: rgba(147, 86, 220, 10%);
+        .fa-store {
+            color:$color__primaire;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Restaurants
+--------------------------------------------------------------*/
+.restaurant {
+    background-color: $color__grey-light;
+
+    &__title {
+        @extend %bold_text;
+        padding: 1.5rem 0 1rem;
+    }
+    &__item {
+        position: relative;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: $shadow-body;
+        border-radius: 15px;
+    }
+    &__item img {
+        height: 12rem;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        object-fit: cover;
+    }
+
+    &__badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: $color__green-dark;
+        background-color: $color__green-light;
+        box-shadow: $shadow-body;
+        padding: 0.35rem 0.8rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+        border-radius: 2px;
+    }
+    &__details {
+        background-color: white;
+        margin-top: -4px;
+        padding: 1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 0 0 15px 15px;
+
+        &__text {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        &__text h3 {
+            font-weight: bold;
+            font-size: 1.12rem;
+            margin: 0 0 0.3rem;
+        }
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Like box with gradien animation ❤
+--------------------------------------------------------------*/
+.like__box {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+        font-size: 1.8rem;
+    }
+
+    &__gradient {
+        @include gradient-animation(#9356dc, #ff79da, 1s, "\f004");
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

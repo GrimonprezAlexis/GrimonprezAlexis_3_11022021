@@ -1,0 +1,30 @@
+// For like button
+@mixin gradient-animation( $start, $end, $transTime, $content ) {
+    background-size: 100%;
+    font-weight: 300!important;
+    background-image: linear-gradient($color__black-light, $color__black-light);
+    position: relative;
+    z-index: 100;
+  
+  &:after {
+    font-weight: 900!important;
+    background-image: linear-gradient($end, $start);
+    content: $content;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -100;
+    transition: opacity $transTime;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
+}

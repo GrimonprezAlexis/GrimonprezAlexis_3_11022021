@@ -1,0 +1,199 @@
+
+/*--------------------------------------------------------------
+# Page du menu du restaurant
+--------------------------------------------------------------*/
+.restaurant__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    padding-left: 0rem;
+    box-shadow: 2px 4px 5px rgb(0 0 0 / 20%);
+
+    a {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-family: 'Shrikhand', sans-serif;
+    }
+}
+
+
+.menu {
+    background-color: $color__grey-light;
+    margin-top: -3.5rem;
+    position: relative;
+    z-index: 10;
+    border-radius: 2rem 2rem 0 0;
+    padding: 2rem 1rem;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    
+        h2 {
+            font-family: $font-family__title;
+            font-size: 2rem;
+    
+        }
+    }
+}
+
+.submenu {
+    padding-top: 1.5rem;
+
+    &__title {
+        font-family: $font-family__text;
+        text-transform: uppercase;
+        padding-bottom: 0.35rem;
+        position: relative;
+        
+        &::after {
+            content: "";
+            height: 2px;
+            width: 15%;
+            background-color: $color__tertiaire;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+        
+        }
+    }
+}
+
+
+@keyframes fade-item-menu {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@-moz-keyframes fade-item-menu { /* sur Firefox */
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@-webkit-keyframes fade-item-menu { /* sur Safari et Chrome */
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+
+.item__menu {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    background-color: $color__grey-light;
+    border-radius: 15px;
+    margin: 1rem 0;
+    padding: 1rem;
+    box-shadow: $shadow-body;
+    cursor: pointer;
+    max-width: 100%;
+    animation: fade-item-menu 1000ms;    
+    -moz-animation: fade-item-menu .6s; // Firefox
+    -webkit-animation: fade-item-menu .6s; // Safari et Chrome
+    -o-animation: fade-item-menu .6s; // Opera
+    animation-fill-mode: both;
+    
+
+    &__header {
+        flex: 1;
+        @extend %flow-ellipsis;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 1rem;
+        padding-bottom: 0.25rem;
+        @extend %flow-ellipsis;
+
+    }
+
+    &__desc {
+        font-size: 0.9rem;
+        @extend %flow-ellipsis;
+    }
+
+    &__price {
+        display: flex;
+        align-items: flex-end;
+        font-weight: bold;
+    }
+
+    &__check {
+        display: flex;
+        background-color: $color__tertiaire;
+        justify-content: center;
+        width: 4rem;
+        align-items: center;
+        border-radius: 0 15px 15px 0;
+        margin: -1rem -5rem -1rem 1rem;
+        transition-duration: 0.5s;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 100px;
+        background-color:white;
+        transform: rotate(90deg);
+        transition-duration: 0.5s;
+
+        i {
+            color: $color__tertiaire;
+        }
+    }
+
+    &:hover &__check {
+        margin-right: -1rem;
+    }
+
+    &:hover &__icon {
+        transform: rotate(360deg);
+    }
+}
+
+
+.order {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+
+    &__btn {
+        @extend .discover__menu__btn;
+        padding: 1rem 3rem!important;
+        background-color: $color__grey-dark;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #fff;
+            @extend %hover__btn;          
+        }
+    }
+
+}
+
+
+//Replace the method delay normaly with Jquery for delay between div
+@for $i from 0 to 9 {
+  .fade-in-delay-#{$i} {
+    animation-delay:  #{$i/10}s;
+  }
+}
