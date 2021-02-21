@@ -4,6 +4,7 @@ Projet 3 - Dynamisez une page web avec des animations CSS
 
 ### Objectif
 Développer un site 100% mobile qui répertorie les menus de restaurants gastronomiques, permettre la réservation en ligne et la composition de menus
+Adapté sur tablette et desktop, mais leur mise en page est libre.
 - [Brief](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DW_P3/Brief%20cre%CC%81atif%20-%20Ohmyfood!.pdf)
 
 ### Contraintes techniques
@@ -26,3 +27,8 @@ HTML, CSS, SASS, Font Awesome, Github
 
 ### Hébergement
 [#Projet 3 - Ohmyfood](https://grimonprezalexis.github.io/GrimonprezAlexis_3_11022021.github.io/)
+
+### Maquette
+[Maquette](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DW_P3/Maquettes%20Ohmyfood.zip)
+
+[![Maquette_mobile](https://user.oc-static.com/upload/2020/08/24/15982605908418_Maquettes%20Ohmyfood.jpg "Maquette_mobile")](https://user.oc-static.com/upload/2020/08/24/15982605908418_Maquettes%20Ohmyfood.jpg "Maquette_mobile")
