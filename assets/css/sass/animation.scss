@@ -31,18 +31,6 @@
     }
 }
 
-@-o-keyframes loader__bounce{
-    0%{
-    -o-transform:scale(1);
-        background-color:#9356DC;
-    }
-    100%{
-        -o-transform:scale(.3);
-        background-color:#FF79DA;
-    }
-
-}
-
 @keyframes loader__bounce{
     0%{
         transform:scale(1);
@@ -59,4 +47,30 @@
     opacity: 0;
     z-index: -10;
   }
-} 
+}
+
+
+@keyframes fade-item-menu {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@-moz-keyframes fade-item-menu { /* sur Firefox */
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@-webkit-keyframes fade-item-menu { /* sur Safari et Chrome */
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}

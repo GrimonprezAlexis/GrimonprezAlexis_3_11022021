@@ -1,133 +1,3 @@
-#loader{
-    background-color: rgb(255 255 255 / 85%);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: loader 0.01s;
-    animation-delay: 2s;
-    animation-fill-mode: both;
-}
-
-.loader{
-    top: 0;
-    background-color:#9356DC;
-    width:29px;
-    height:29px;
-    animation: loader__bounce 1.4s;
-    -moz-animation-iteration-count:2;
-    -moz-animation-direction:normal;
-    -moz-transform:scale(.3);
-    -moz-border-radius:19px;
-
-    animation: loader__bounce 1.4s;
-    -webkit-animation-iteration-count:2;
-    -webkit-animation-direction:normal;
-    -webkit-transform:scale(.3);
-    -webkit-border-radius:19px;
-
-    animation: loader__bounce 1.4s;
-    -ms-animation-iteration-count:2;
-    -ms-animation-direction:normal;
-    -ms-transform:scale(.3);
-    -ms-border-radius:19px;
-
-    animation: loader__bounce 1.4s;
-    -o-animation-iteration-count:2;
-    -o-animation-direction:normal;
-    -o-transform:scale(.3);
-    -o-border-radius:19px;
-
-    animation: loader__bounce 1.4s;
-    animation-iteration-count:2;
-    animation-direction:normal;
-    transform:scale(.3);
-    border-radius:19px;
-
-}
-
-#loader__1{
-    left:0;
-    -moz-animation-delay:0.52s;
-    -webkit-animation-delay:0.52s;
-    -ms-animation-delay:0.52s;
-    -o-animation-delay:0.52s;
-    animation-delay:0.52s;
-}
-
-#loader__2{
-    left:30px;
-    -moz-animation-delay:0.65s;
-    -webkit-animation-delay:0.65s;
-    -ms-animation-delay:0.65s;
-    -o-animation-delay:0.65s;
-    animation-delay:0.65s;
-}
-
-#loader__3{
-    left:60px;
-    -moz-animation-delay:0.78s;
-    -webkit-animation-delay:0.78s;
-    -ms-animation-delay:0.78s;
-    -o-animation-delay:0.78s;
-    animation-delay:0.78s;
-}
-
-#loader__4{
-    left:90px;
-    -moz-animation-delay:0.91s;
-    -webkit-animation-delay:0.91s;
-    -ms-animation-delay:0.91s;
-    -o-animation-delay:0.91s;
-    animation-delay:0.91s;
-}
-
-#loader__5{
-    left:120px;
-    -moz-animation-delay:1.04s;
-    -webkit-animation-delay:1.04s;
-    -ms-animation-delay:1.04s;
-    -o-animation-delay:1.04s;
-    animation-delay:1.04s;
-}
-
-#loader__6{
-    left:150px;
-    -moz-animation-delay:1.17s;
-    -webkit-animation-delay:1.17s;
-    -ms-animation-delay:1.17s;
-    -o-animation-delay:1.17s;
-    animation-delay:1.17s;
-}
-
-#loader__7{
-    left:180px;
-    -moz-animation-delay:1.3s;
-    -webkit-animation-delay:1.3s;
-    -ms-animation-delay:1.3s;
-    -o-animation-delay:1.3s;
-    animation-delay:1.3s;
-}
-
-#loader__8{
-    left:210px;
-    -moz-animation-delay:1.43s;
-    -webkit-animation-delay:1.43s;
-    -ms-animation-delay:1.43s;
-    -o-animation-delay:1.43s;
-    animation-delay:1.43s;
-}
-
-
-
-
-
-
-
-
 #header {
     display: flex;
     justify-content: center;
@@ -216,6 +86,11 @@
         @extend %list;
         margin: 0 auto;
 
+        @media screen and (min-width: 992px){
+            display: flex;
+            margin: 0 auto;
+        }
+
         li {
             counter-increment: li;
             background-color: $color__grey-light;
@@ -230,6 +105,11 @@
             &:hover {
                 transform: scale(1.05);
             }
+
+            @media screen and (min-width: 992px){
+                margin: 0 2rem;
+            }
+
         }
     
         li::before {
@@ -282,12 +162,29 @@
         @extend %bold_text;
         padding: 1.5rem 0 1rem;
     }
+    &__list {
+        display: flex;
+        flex-flow: column wrap;
+
+        @media screen and (min-width: 992px){
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+    }
+
     &__item {
         position: relative;
         text-align: center;
         margin-bottom: 2rem;
         box-shadow: $shadow-body;
         border-radius: 15px;
+
+        @media screen and (min-width: 992px){
+            width: 100%;
+            margin: 0 1rem;
+        }
+
     }
     &__item img {
         height: 12rem;
@@ -352,4 +249,114 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+}
+
+
+#loader{
+    background-color: rgb(255 255 255 / 85%);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: loader 0.01s;
+    animation-delay: 1.5s;
+    animation-fill-mode: both;
+}
+
+.loader{
+    top: 0;
+    background-color:#9356DC;
+    width:29px;
+    height:29px;
+    animation: loader__bounce 1.4s;
+    -moz-animation-iteration-count:2;
+    -moz-animation-direction:normal;
+    -moz-transform:scale(.3);
+    -moz-border-radius:19px;
+
+    animation: loader__bounce 1.4s;
+    -webkit-animation-iteration-count:2;
+    -webkit-animation-direction:normal;
+    -webkit-transform:scale(.3);
+    -webkit-border-radius:19px;
+
+    animation: loader__bounce 1.4s;
+    -ms-animation-iteration-count:2;
+    -ms-animation-direction:normal;
+    -ms-transform:scale(.3);
+    -ms-border-radius:19px;
+
+    animation: loader__bounce 1.4s;
+    animation-iteration-count:2;
+    animation-direction:normal;
+    transform:scale(.3);
+    border-radius:19px;
+
+}
+
+#loader__1{
+    left:0;
+    -moz-animation-delay:0.52s;
+    -webkit-animation-delay:0.52s;
+    -ms-animation-delay:0.52s;
+    animation-delay:0.52s;
+}
+
+#loader__2{
+    left:30px;
+    -moz-animation-delay:0.65s;
+    -webkit-animation-delay:0.65s;
+    -ms-animation-delay:0.65s;
+    animation-delay:0.65s;
+}
+
+#loader__3{
+    left:60px;
+    -moz-animation-delay:0.78s;
+    -webkit-animation-delay:0.78s;
+    -ms-animation-delay:0.78s;
+    animation-delay:0.78s;
+}
+
+#loader__4{
+    left:90px;
+    -moz-animation-delay:0.91s;
+    -webkit-animation-delay:0.91s;
+    -ms-animation-delay:0.91s;
+    animation-delay:0.91s;
+}
+
+#loader__5{
+    left:120px;
+    -moz-animation-delay:1.04s;
+    -webkit-animation-delay:1.04s;
+    -ms-animation-delay:1.04s;
+    animation-delay:1.04s;
+}
+
+#loader__6{
+    left:150px;
+    -moz-animation-delay:1.17s;
+    -webkit-animation-delay:1.17s;
+    -ms-animation-delay:1.17s;
+    animation-delay:1.17s;
+}
+
+#loader__7{
+    left:180px;
+    -moz-animation-delay:1.3s;
+    -webkit-animation-delay:1.3s;
+    -ms-animation-delay:1.3s;
+    animation-delay:1.3s;
+}
+
+#loader__8{
+    left:210px;
+    -moz-animation-delay:1.43s;
+    -webkit-animation-delay:1.43s;
+    -ms-animation-delay:1.43s;
+    animation-delay:1.43s;
 }

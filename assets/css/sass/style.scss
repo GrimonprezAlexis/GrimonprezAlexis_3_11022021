@@ -99,6 +99,13 @@ input:focus, button:focus{
         padding-bottom: 1rem;
     }
 
+    &__list__link {
+        @media screen and (min-width: 992px){
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
     &__list__link li {
         margin-bottom: 0.5rem;
 

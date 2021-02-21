@@ -2,21 +2,33 @@
 /*--------------------------------------------------------------
 # Page du menu du restaurant
 --------------------------------------------------------------*/
-.restaurant__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 1rem;
-    padding-left: 0rem;
-    box-shadow: 2px 4px 5px rgb(0 0 0 / 20%);
 
-    a {
-        font-size: 1.5rem;
+.restaurant {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;
+        padding-left: 0rem;
+        box-shadow: 2px 4px 5px rgb(0 0 0 / 20%);
+
+        a {
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-family: 'Shrikhand', sans-serif;
+        }
     }
 
-    h1 {
-        font-size: 2rem;
-        font-family: 'Shrikhand', sans-serif;
+
+    &__img {
+        @media screen and (min-width: 992px){
+            width: 100%;
+            max-height: 35vw;
+            object-fit: cover;
+        }
     }
 }
 
@@ -36,8 +48,14 @@
     
         h2 {
             font-family: $font-family__title;
-            font-size: 2rem;
-    
+            font-size: 1.85rem;
+        }
+    }
+
+    &__list {
+        @media screen and (min-width: 992px){
+            display: flex;
+            justify-content: space-around;
         }
     }
 }
@@ -63,33 +81,6 @@
         }
     }
 }
-
-
-@keyframes fade-item-menu {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1)
-    }
-}
-@-moz-keyframes fade-item-menu { /* sur Firefox */
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1)
-    }
-}
-@-webkit-keyframes fade-item-menu { /* sur Safari et Chrome */
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1)
-    }
-}
-
 
 .item__menu {
     display: flex;
