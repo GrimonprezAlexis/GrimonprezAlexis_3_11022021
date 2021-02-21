@@ -53,3 +53,10 @@
         background-color:#FF79DA;
     }
 }
+
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+} 
