@@ -26,7 +26,7 @@ Adapté sur tablette et desktop, mais leur mise en page est libre.
 HTML, CSS, SASS, Font Awesome, Github
 
 ### Hébergement
-[#Projet 3 - Ohmyfood](https://grimonprezalexis.github.io/GrimonprezAlexis_3_11022021.github.io/)
+[#Projet 3 - Ohmyfood](https://grimonprezalexis.github.io/GrimonprezAlexis_3_11022021)
 
 ### Maquette
 [Maquette](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/DW_P3/Maquettes%20Ohmyfood.zip)
